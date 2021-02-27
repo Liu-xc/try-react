@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-
+import TodoList from './components/todo-list/index.tsx';
 function App() {
+  const todoList = [{
+    id: 1,
+    text: 'hello',
+  },{
+    id: 2,
+    text: 'hey',
+  },{
+    id: 3,
+    text: 'hi',
+  }]
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +27,7 @@ function App() {
         >
           Learn React
         </a>
+        <TodoList todoList={ todoList }></TodoList>
       </header>
     </div>
   );

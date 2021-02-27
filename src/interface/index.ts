@@ -4,13 +4,15 @@ export interface ComponentProps {
   children?: React.ReactNode,
 }
 
-export interface TDItem extends ComponentProps {
-  todo: {
-    id: number,
-    text: string,
-  }
+export interface TDItem {
+  id: number,
+  text: string,
+}
+export interface TDItemProps extends ComponentProps {
+  todo: TDItem,
 }
 
-export interface TDProps extends ComponentProps {
-  todoList: TDItem[],
+export type TDList = TDItem[]
+export interface TDListProps extends ComponentProps {
+  todoList: TDList,
 } 

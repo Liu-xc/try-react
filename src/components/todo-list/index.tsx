@@ -1,10 +1,20 @@
-import React from 'react';
+import * as React from 'react';
+import TodoItem from '../todo-list-item/index';
+import { TDListProps } from '../../interface/index';
 
-import TodoItem from ;
-
-const TodoList = ({ todoList }) => {
+const TodoList: React.FC<TDListProps> = ({ todoList }) => {
   return (
     <ul>
+      { todoList.map(todo => {
+        return (
+          <TodoItem
+            key= { todo.id }
+            todo={ todo }
+          ></TodoItem>
+        )
+      }) }
     </ul>
   )
 }
+
+export default TodoList;

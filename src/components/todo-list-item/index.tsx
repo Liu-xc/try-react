@@ -1,7 +1,7 @@
 import React from 'react';
-import { TDItem } from '../../interface/index';
+import {  TDItemProps } from '../../interface/index';
 
-const TodoItem: React.FC<TDItem> = ({ todo }) => {
+const TodoItem: React.FC<TDItemProps> = ({ todo }) => {
   return (
     <li>
       { todo.text }
