@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import TodoList from './components/todo-list/index.tsx';
+import TodoList from '@/components/todo-list/index.tsx';
 function App() {
   const todoList = [{
     id: 1,

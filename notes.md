@@ -1,7 +1,7 @@
 # 笔记
 ## 如何在react脚手架搭建的项目中使用typescript
 1. 安装类型定义包（@types/react 、 @types/react-dom）
-### 如何在使用TS的基础上开启路径别名(未成功)
+### 如何在使用TS的基础上开启路径别名
 2. 打开react项目的配置目录
   ```
   npm run eject
@@ -16,8 +16,12 @@
   tsc --init
   // 至此准备工作已完成，开始配置
   ```
-5. 在webpack.config.js中的resolve字段下配置alias字段
+5. 在webpack.config.js中的resolve字段下配置alias字段和extensions字段
   ```
+  extensions: paths.moduleFileExtensions
+    .map(ext => `.${ext}`)
+    .filter(ext => useTypeScript || !ext.includes('ts'))
+    .concat(['tsx', 'ts']), // 这里把tsx和ts文件加入该规则
   alias: {
     '@': path.resolve(__dirname, 'src'),
   }

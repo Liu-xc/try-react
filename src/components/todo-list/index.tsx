@@ -1,6 +1,6 @@
 import * as React from 'react';
-import TodoItem from '../todo-list-item/index';
-import { TDListProps } from '../../interface/index';
+import TodoItem from '@/components/todo-list-item/index';
+import { TDListProps } from '@/interface/index';
 
 const TodoList: React.FC<TDListProps> = ({ todoList }) => {
   return (
