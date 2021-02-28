@@ -92,4 +92,13 @@ cnpm un less-loader
 cnpm i less-loader@5.0.0 -S
 ```
 
+## 引入antd
+```
+// 安装antd
+cnpm i antd -S
+// 在入口文件App.js中引入antd样式
+import 'antd/dist/antd.min.css';
+// 按需引用组件库
+import { Button } from 'antd';
+```
 

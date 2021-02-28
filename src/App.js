@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import 'antd/dist/antd.min.css';
 import './App.css';
 import TodoList from '@/components/todo-list/index.tsx';
 function App() {

@@ -1,12 +1,13 @@
 import React from 'react';
-import {  TDItemProps } from '@/interface/index';
+import { List } from 'antd';
+import { TDItemProps } from '@/interface/index';
 import './style/index.less';
 
-const TodoItem: React.FC<TDItemProps> = ({ todo }) => {
+const TodoItem: React.FC<TDItemProps> = ({ text }) => {
   return (
-    <li className="todo-item">
-      { todo.text }
-    </li>
+    <List.Item className="todo-item">
+      { text }
+    </List.Item>
   );
 }
 

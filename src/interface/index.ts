@@ -9,7 +9,7 @@ export interface TDItem {
   text: string,
 }
 export interface TDItemProps extends ComponentProps {
-  todo: TDItem,
+  text: string,
 }
 
 export type TDList = TDItem[]
