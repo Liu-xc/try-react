@@ -107,3 +107,21 @@ import { Button } from 'antd';
 
 ## 绑定了onClick回调点击还是没有效果
 **自己定义的组件不是真实的dom，不是最后页面上会渲染的真实元素，所以绑定点击事件是没有用的，要把点击事件绑定到真实的dom元素上**
+
+## 如何开启antd的按需加载
+```
+You are using a whole package of antd, please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.
+```
+顺着这个提示信息去到babel-plugin-import的npm主页，根据提示安装：
+```
+cnpm install babel-plugin-import --save-dev
+// 然后在webpack的babel-loader配置项中进行配置
+// 添加plugins即可
+[
+  "import",
+  {
+    "libraryName": "antd",
+    "style": ["css", "less"]
+  }
+],
+```
