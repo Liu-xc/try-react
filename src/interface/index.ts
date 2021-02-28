@@ -9,10 +9,14 @@ export interface TDItem {
   text: string,
 }
 export interface TDItemProps extends ComponentProps {
-  text: string,
+  todo: TDItem,
+  handleListChange: Function,
+  [propName: string]: any,
 }
 
 export type TDList = TDItem[]
 export interface TDListProps extends ComponentProps {
   todoList: TDList,
+  handleListChange: Function,
+  [propName: string]: any,
 } 

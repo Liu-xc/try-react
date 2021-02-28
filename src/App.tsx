@@ -1,10 +1,17 @@
 import logo from './logo.svg';
 import 'antd/dist/antd.min.css';
 import './App.css';
+import { TDList, TDItem } from '@/interface/index';
 import TodoList from '@/components/todo-list/index';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+
+interface TDLChange {
+  type: string,
+  todo: TDItem,
+}
+
 const App:FC = () => {
-  const todoList = [{
+  const [todoList, setTodoList] = useState([{
     id: 1,
     text: 'hello',
   },{
@@ -13,7 +20,30 @@ const App:FC = () => {
   },{
     id: 3,
     text: 'hi',
-  }]
+  }] as TDList);
+  
+  const handleListChange = (change: TDLChange) => {
+    console.log('handleListChange', change);
+    const list = todoList.slice();
+    // TODO 这里判断变化的类型来判断进行什么操作
+    switch (change.type) {
+      case 'add':
+        list.push(change.todo);
+        setTodoList(list);
+        break;
+      case 'delete':
+        setTodoList(list.filter(todo => todo.id !== change.todo.id));
+        break;
+      case 'update':
+        const idx = list.findIndex(todo => todo.id === change.todo.id);
+        list[idx] = change.todo;
+        setTodoList(list);
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,7 +59,7 @@ const App:FC = () => {
         >
           Learn React
         </a>
-        <TodoList todoList={ todoList }></TodoList>
+        <TodoList {...{todoList, handleListChange}}></TodoList>
       </header>
     </div>
   );
