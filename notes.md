@@ -102,3 +102,7 @@ import 'antd/dist/antd.min.css';
 import { Button } from 'antd';
 ```
 
+## 在TSX中引入图片资源报错
+在根目录下创建images.d.ts文件定义图片模块即可
+
+

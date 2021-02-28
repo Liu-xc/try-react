@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import 'antd/dist/antd.min.css';
 import './App.css';
-import TodoList from '@/components/todo-list/index.tsx';
-function App() {
+import TodoList from '@/components/todo-list/index';
+import React, { FC } from 'react';
+const App:FC = () => {
   const todoList = [{
     id: 1,
     text: 'hello',
