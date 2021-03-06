@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import 'antd/dist/antd.min.css';
 import './App.css';
 import { TDList, TDItem } from '@/interface/index';
 import TodoList from '@/components/todo-list/index';
 import React, { FC, useState } from 'react';
-
+import StoreList from '@/store/containers/todoList';
 interface TDLChange {
   type: string,
   todo: TDItem,
 }
 
-const App:FC = () => {
+const App:FC = (props) => {
+  console.log(props);
   const [todoList, setTodoList] = useState([{
-    id: 1,
+    id: '1',
     text: 'hello',
   },{
-    id: 2,
+    id: '2',
     text: 'hey',
   },{
-    id: 3,
+    id: '3',
     text: 'hi',
   }] as TDList);
   
@@ -47,19 +47,8 @@ const App:FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <TodoList {...{todoList, handleListChange}}></TodoList>
+        <StoreList></StoreList>
       </header>
     </div>
   );

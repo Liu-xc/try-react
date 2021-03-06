@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import TodoItem from '@/components/todo-list-item/index';
-import { TDListProps } from '@/interface/index';
 import { List, Button, Input } from 'antd';
-import { v4 as uuidv4 } from 'uuid';
+import { StoreTDListProps } from '@/interface/index';
 
-const TodoList: React.FC<TDListProps> = ({ todoList = [], handleListChange }) => {
+const StoreTodoList: React.FC<StoreTDListProps> = ({ todoList = [], onAddTodo }) => {
   const [text, setText] = useState('');
   const [showInput, setShowInput] = useState(false);
 
@@ -12,8 +11,12 @@ const TodoList: React.FC<TDListProps> = ({ todoList = [], handleListChange }) =>
     setText(e.target.value)
   }
 
+  const handleListChange = (e: any) => {
+    console.log('handleListChange', e);
+  }
+
   const onConfirm = () => {
-    handleListChange({ type: 'add', todo: { id: uuidv4(), text}})
+    onAddTodo(text);
     hideInput()
   }
 
@@ -43,4 +46,4 @@ const TodoList: React.FC<TDListProps> = ({ todoList = [], handleListChange }) =>
   )
 }
 
-export default TodoList;
+export default StoreTodoList;

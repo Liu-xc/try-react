@@ -125,3 +125,20 @@ cnpm install babel-plugin-import --save-dev
   }
 ],
 ```
+
+## 如何在用脚手架创建项目的时候就使用ts
+参考：https://www.jianshu.com/p/2b981304cdd4
+```
+npx create-react-app typescript-react-app --scripts-version=react-scripts-ts
+// react-scripts-ts是一系列适配器，它利用标准的create-react-app工程管道并把TypeScript混入进来。
+```
+
+## 如何引入redux
+```
+$ npm install -S redux react-redux @types/react-redux
+```
+
+## 如何在FC中使用store
+注意：mapStateToProps和mapDispatchToProps的顺序是不能调换的
+
+## 有没有好用的actionCreator封装工具

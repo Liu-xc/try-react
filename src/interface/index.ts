@@ -5,7 +5,7 @@ export interface ComponentProps {
 }
 
 export interface TDItem {
-  id: number,
+  id: string,
   text: string,
 }
 export interface TDItemProps extends ComponentProps {
@@ -19,4 +19,16 @@ export interface TDListProps extends ComponentProps {
   todoList: TDList,
   handleListChange: Function,
   [propName: string]: any,
-} 
+}
+
+export interface StoreTDListProps extends ComponentProps {
+  todoList: TDList,
+  [propName: string]: any,
+}
+
+export interface TDAction {
+  type: string,
+  text?: string,
+  id?: string,
+  [props: string]: any,
+}
